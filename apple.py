@@ -7,6 +7,7 @@ from sklearn.linear_model import LinearRegression
 def check(a,b,c,x):  
     if (b>=a and c<=a):
         df=pd.read_csv('apple.csv')
+        df.drop(['Adj Close','Volume'],axis=1,inplace=True)
         day_u=df['Day'].unique()
         day_l=[]
         for i in day_u:
